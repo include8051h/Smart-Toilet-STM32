@@ -1,0 +1,215 @@
+/* 根容器：纵向居中布局 */
+.container {
+  display: flex;
+  align-items: center;  /*居中对齐*/
+  flex-direction: column;      /* 纵向对齐 */
+}
+
+/* 标题气泡中的图标大小 */
+.bubble_icon
+{
+  width: 120rpx;
+  height: 100rpx;
+}
+
+/* 标题气泡样式 */
+.bubble_title
+{
+  width: 600rpx;
+  height: 200rpx;
+  background-color: #3ab4ff;  /* 蓝色背景 */
+  border-radius: 40rpx; /* 圆角 */
+  padding: 40rpx 40rpx; /* 内边距 */
+  margin: 20rpx;   /* 外边距 */
+  display: flex;
+  align-items: center;  /* 内部元素垂直居中 */
+  justify-content: space-between; /* 图标与文字左右分布 */
+  box-shadow: 1rpx 1rpx 50rpx rgba(0, 0, 0, 0.1); /* 阴影 */
+}
+
+/* 标题文字容器：垂直排列 */
+.bubble_text
+{
+  display: flex;
+  flex-direction: column;
+}
+
+/* 主标题样式 */
+.text1
+{
+  font-size: 40rpx;
+  font-weight: bold;
+  text-indent: 30rpx; /* 首行缩进 */
+  margin: 10rpx;
+}
+
+/* 副标题样式 */
+.text2
+{
+  text-indent: 30rpx;
+  margin: 10rpx;
+}
+
+/* 功能气泡组：多列换行布局 */
+.bubble_group
+{
+  display: flex;
+  flex-direction: row;  /* 横向排列 */
+  flex-wrap: wrap;  /* 超出宽度换行 */
+  justify-content: space-between; /* 间距均匀 */
+}
+
+/* 单个功能气泡样式 */
+.bubble_func_fan
+{
+  width: 300rpx;
+  height: 400rpx;
+  background-color: #ffffff;  /* 白色背景 */
+  border-radius: 30rpx;
+  box-shadow: 1rpx 1rpx 30rpx rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column; /* 内部垂直排列 */
+  align-items: center;   /* 内容居中 */
+  margin: 25rpx;
+}
+
+/* 功能图标大小 */
+.icon_func_fan
+{
+  width: 120rpx;
+  height: 120rpx;
+  margin: 30rpx;
+}
+
+/* 功能文字区：右对齐 */
+.text_func_fan
+{
+  text-align: right;
+  margin: 10rpx;
+}
+
+/* 功能标题文字 */
+.func_title_fan
+{
+  font-size: 30rpx;
+  color: #7f7f7f; /* 灰色 */
+}
+
+/* 功能状态文字（加粗） */
+.func_status_fan
+{
+  font-size: 40rpx;
+  font-weight: bold;
+  color: #7f7f7f;
+}
+
+/* 门控制气泡样式 */
+.bubble_door
+{
+  display: flex;
+  flex-direction: column;
+  border-radius: 30rpx;
+  box-shadow: 1rpx 1rpx 30rpx rgba(0, 0, 0, 0.1);
+  margin: 10rpx;
+  padding: 15rpx;
+  width: 600rpx;
+  height: auto; /* 高度自适应 */
+  align-items: center;
+}
+
+/* 门图标大小 */
+.icon_door
+{
+  width:  120rpx;
+  height: 120rpx;
+  margin: 10rpx;
+}
+
+/* 门标题文字 */
+.bubble_door_title
+{
+  font-size: 30rpx;
+  color: #7f7f7f;
+}
+
+/* 门状态文字 */
+.bubble_door_status
+{
+  font-size: 40rpx;
+  font-weight: bold;
+  color: #7f7f7f;
+}
+
+/* 门控制按钮：水平排列 */
+.bubble_door_ctrl
+{
+  display: flex;
+  flex-direction: row;
+  margin: 13rpx
+}
+
+/* 门控制文字 */
+.bubble_door_ctrl_text
+{
+  display: flex;
+  font-size: 40rpx;
+  margin-right: 15rpx;
+}
+
+/* 设备管理方式 */
+.bubble_method
+{
+  width: 600rpx;
+  height: 200rpx;
+  background-color: #ffffff;
+  border-radius: 40rpx;
+  padding: 40rpx 40rpx;
+  margin: 20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 1rpx 1rpx 50rpx rgba(0, 0, 0, 0.1);
+}
+
+.icon_method
+{
+  width:  120rpx;
+  height: 120rpx;
+  margin: 10rpx;
+}
+
+.text_func_title
+{
+  font-size: 30rpx;
+  color: #7f7f7f;
+}
+
+.text_func_info
+{
+  font-weight: bold;
+  font-size: 40rpx;
+  color: #7f7f7f;
+}
+
+.door_info_comprehension
+{
+  display: flex;
+  flex-direction: row;      /* 纵向对齐 */
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 25rpx;
+}
+
+.text_func_info_1
+{
+  font-size: 30rpx;
+  color: #7f7f7f;
+  margin-top: 10rpx;
+}
+
+/* 开关容器 */
+.interface_on
+{
+  display: flex;
+  margin-bottom: 5rpx;
+}

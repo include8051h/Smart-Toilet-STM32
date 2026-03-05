@@ -1,0 +1,267 @@
+<!-- 根容器，使用 flex 布局纵向排列 -->
+<view class = "container">
+
+  <!-- 第一个气泡 标题气泡 -->
+  <view class = "bubble_title">
+
+  <!-- 文字内容区 -->
+    <view class="bubble_text">
+    <!-- 主标题 -->
+      <text class="text1">
+        智慧物联
+      </text>
+      <!-- 副标题 -->
+      <text class="text2">
+        科技为人服务
+      </text>
+    </view>
+    <!-- 标题图标 -->
+    <image src="/image/iot.png" class="bubble_icon"></image>
+  </view>
+
+     <!-- 内容气泡组：所有功能项容器 -->
+    <view class="bubble_group">
+      
+      <!-- 被困求救功能气泡 -->
+      <view class="bubble_func_fan">
+              <image class="icon_func_fan" src="/image/help.png"></image>
+              <view class="text_func_fan">
+                <view class="func_title_fan">被困求救</view>
+                <!-- 动态显示求救状态，从 JS data.help 获取 -->
+                <view class="func_status_fan">{{help}}</view>
+              </view>
+            </view>
+
+      <!-- 卫生间使用时间气泡 -->
+      <view class="bubble_func_fan">
+              <image class="icon_func_fan" src="/image/time.png"></image>
+              <view class="text_func_fan">
+                <view class="func_title_fan">卫生间使用时间</view>
+                <view class="func_title_fan">是否超时</view>
+                <!-- 显示是否超时（是/否） -->
+                <view class="func_status_fan">{{time}}</view>
+              </view>
+            </view>
+      
+      <!-- 卫生间内是否有人气泡 -->
+      <view class="bubble_func_fan">
+              <image class="icon_func_fan" src="/image/user.png"></image>
+              <view class="text_func_fan">
+                <view class="func_title_fan">卫生间内是否有人</view>
+                 <!-- 显示“是”或“否” -->
+                <view class="func_status_fan">{{user}}</view>
+              </view>
+            </view>
+
+       <!-- 设备管理方式气泡（含两个开关） -->
+      <view class="bubble_func_fan">
+              <image class="icon_func_fan" src="/image/method.png"></image>
+              <view class="text_func_fan">
+                <view class="func_title_fan">设备管理方式</view>
+
+                 <!-- 显示当前模式（手动/自动） -->
+                <view class="func_status_fan">{{method}}</view>
+                
+                <!-- 手动开关 -->
+                <view class="interface_on">
+                  <view class="func_title_fan">手动</view>
+                  <!-- 开关绑定事件：切换为手动模式 -->
+                  <switch class="swithch_toggle" bindchange="OneNET_setInfo_method_manual"/>
+                </view>
+                <!-- 自动开关 -->
+                <view class="interface_on">
+                  <view class="func_title_fan">自动</view>
+                  <!-- 开关绑定事件：切换为自动模式 -->
+                  <switch class="swithch_toggle" bindchange="OneNET_setInfo_method_auto"/>
+                </view>
+              </view>
+            </view>
+
+      <!-- 异味气体浓度气泡 -->
+      <view class="bubble_func_fan">
+              <image class="icon_func_fan" src="/image/air.png"></image>
+              <view class="text_func_fan">
+                <view class="func_title_fan">异味气体浓度</view>
+                <!-- 显示“正常”或“过高” -->
+                <view class="func_status_fan">{{air}}</view>
+              </view>
+            </view>
+
+      <!-- 通风控制气泡（含开关） -->
+      <view class="bubble_func_fan">
+        <image class="icon_func_fan" src="/image/fan.png"></image>
+        <view class="text_func_fan">
+          <view class="func_title_fan">通风</view>
+
+          <!-- 显示“开”或“关” -->
+          <view class="func_status_fan">{{fan}}</view>
+        </view>
+        <!-- 开通风开关 -->
+        <view class="interface_on">
+          <view class="func_title_fan">开</view>
+          <switch class="swithch_toggle" bindchange="OneNET_setInfo_fan_on"/>
+        </view>
+         <!-- 关通风开关 -->
+        <view class="interface_on">
+          <view class="func_title_fan">关</view>
+          <switch class="swithch_toggle" bindchange="OneNET_setInfo_fan_off"/>
+        </view>
+      </view>
+
+     <!-- 环境亮度气泡 -->
+     <view class="bubble_func_fan">
+              <image class="icon_func_fan" src="/image/lighting.png"></image>
+              <view class="text_func_fan">
+                <view class="func_title_fan">环境亮度</view>
+                <!-- 显示“亮”或“暗” -->
+                <view class="func_status_fan">{{lighting}}</view>
+              </view>
+            </view>
+
+      <!-- 电灯控制气泡 -->
+       <view class="bubble_func_fan">
+              <image class="icon_func_fan" src="/image/led.png"></image>
+              <view class="text_func_fan">
+                <view class="func_title_fan">灯</view>
+                <!-- 显示“开”或“关” -->
+                <view class="func_status_fan">{{led}}</view>
+              </view>
+              <!-- 开灯开关 -->
+              <view class="interface_on">
+              <view class="func_title_fan">开</view>
+              <switch class="swithch_toggle" bindchange="OneNET_setInfo_led_on"/>
+              </view>
+              <!-- 关灯开关 -->
+              <view class="interface_on">
+              <view class="func_title_fan">关</view>
+              <switch class="swithch_toggle" bindchange="OneNET_setInfo_led_off"/>
+              </view>
+            </view>
+
+       <!-- 水位气泡 -->
+       <view class="bubble_func_fan">
+              <image class="icon_func_fan" src="/image/waterLevel.png"></image>
+              <view class="text_func_fan">
+                <view class="func_title_fan">水位</view>
+                <!-- 显示“正常”或“过高” -->
+                <view class="func_status_fan">{{waterLevel}}</view>
+              </view>
+            </view>
+
+      
+
+      <!-- 冲水控制气泡 -->
+      <view class="bubble_func_fan">
+              <image class="icon_func_fan" src="/image/waterPump.png"></image>
+              <view class="text_func_fan">
+                <view class="func_title_fan">冲水</view>
+                <!-- 显示“开”或“关” -->
+                <view class="func_status_fan">{{waterPump}}</view>
+              </view>
+              <!-- 开冲水开关 -->
+              <view class="interface_on">
+              <view class="func_title_fan">开</view>
+              <switch class="swithch_toggle" bindchange="OneNET_setInfo_waterPump_on"/>
+              </view>
+              <!-- 关冲水开关 -->
+              <view class="interface_on">
+              <view class="func_title_fan">关</view>
+              <switch class="swithch_toggle" bindchange="OneNET_setInfo_waterPump_off"/>
+              </view>
+            </view>
+
+      <!-- 卫生间纸巾剩余量气泡 -->
+      <view class="bubble_func_fan">
+              <image class="icon_func_fan" src="/image/paper.png"></image>
+              <view class="text_func_fan">
+                <view class="func_title_fan">卫生间纸巾剩余量</view>
+                <!-- 显示“很多”、“足够”等 -->
+                <view class="func_status_fan">{{paper}}</view>
+              </view>
+            </view>
+
+       <!-- 门锁控制气泡 -->
+       <view class="bubble_func_fan">
+              <image class="icon_func_fan" src="/image/lock.png"></image>
+              <view class="text_func_fan">
+                <view class="func_title_fan">门锁</view>
+                <!-- 显示“上锁”或“开锁” -->
+                <view class="func_status_fan">{{lock}}</view>
+              </view>
+              <!-- 上锁开关 -->
+              <view class="interface_on">
+              <view class="func_title_fan">上锁</view>
+              <switch class="swithch_toggle" bindchange="OneNET_setInfo_lock_on"/>
+              </view>
+              <!-- 开锁开关 -->
+              <view class="interface_on">
+              <view class="func_title_fan">开锁</view>
+              <switch class="swithch_toggle" bindchange="OneNET_setInfo_lock_off"/>
+              </view>
+            </view>
+
+       <!-- 重启气泡 -->
+       <view class="bubble_func_fan">
+              <image class="icon_func_fan" src="/image/reset.png"></image>
+              <view class="text_func_fan">
+                <view class="func_title_fan">重置</view>
+                <!-- 显示“重置中”或“已重置” -->
+                <view class="func_status_fan">{{reset}}</view>
+              </view>
+              <!-- 重启开关（单个） -->
+              <switch class="swithch_toggle" bindchange="OneNET_setInfo_reset"/>
+            </view>
+
+      <!-- 命令下传状态气泡 -->
+      <view class="bubble_func_fan">
+              <image class="icon_func_fan" src="/image/cmdPassDown.png"></image>
+              <view class="text_func_fan">
+                <view class="func_title_fan">命令下传</view>
+                <!-- 显示最近执行的命令或状态 -->
+                <view class="func_status_fan">{{cmdPassDown}}</view>
+              </view>
+            </view>
+
+    </view><!-- bubble_group 结束 -->
+
+  <!-- 门控制专用气泡（底部大区域） -->
+  <view class = "bubble_door">
+    <!-- 门图标 -->
+    <image src="/image/door.png" class="icon_door"/>
+    <!-- 门标题 -->
+    <view class="bubble_door_title">门</view>
+    <!-- 门当前状态（如“向内开”） -->
+    <view class="bubble_door_status">{{door}}</view>
+
+    <!-- 门控制按钮组 -->
+    <view class="door_info_comprehension">
+
+      <!-- 向内开按钮 -->
+      <view class="bubble_door_ctrl">
+        <view class="bubble_door_ctrl_text">向内开</view>
+        <switch class="bubble_door_ctrl_switch" bindchange="OneNET_setInfo_door_openIn"/>
+      </view>
+
+      <!-- 向外关按钮 -->
+      <view class="bubble_door_ctrl">
+        <view class="bubble_door_ctrl_text">向外关</view>
+        <switch class="bubble_door_ctrl_switch" bindchange="OneNET_setInfo_door_closeOut"/>
+      </view>
+
+      <!-- 向外开按钮 -->
+      <view class="bubble_door_ctrl">
+        <view class="bubble_door_ctrl_text">向外开</view>
+        <switch class="bubble_door_ctrl_switch" bindchange="OneNET_setInfo_door_openOut"/>
+      </view>
+
+      <!-- 向内关按钮 -->
+      <view class="bubble_door_ctrl">
+        <view class="bubble_door_ctrl_text">向内关</view>
+        <switch class="bubble_door_ctrl_switch" bindchange="OneNET_setInfo_door_closeIn"/>
+      </view>
+
+    </view>
+
+  </view><!-- bubble_door 结束 -->
+
+</view><!-- container 结束 -->

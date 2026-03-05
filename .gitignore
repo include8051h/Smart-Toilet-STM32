@@ -12,3 +12,7 @@ Objects/ Listings/ build/ Debug/ Release/ *.build_log.htm
 
 *.key *.pem secrets.h config_local.h
 EOF
+# 微信小程序
+project.config.json.bak
+sitemap.json
+
