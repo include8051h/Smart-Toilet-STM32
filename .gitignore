@@ -1,0 +1,14 @@
+
+*.hex *.bin *.axf *.elf *.map *.o *.d
+Objects/ Listings/ build/ Debug/ Release/ *.build_log.htm
+
+
+.vscode/ .idea/ *.uvoptx *.uvprojx *.ioc *.cproject *.project
+*.launch settings/
+
+
+.DS_Store Thumbs.db desktop.ini
+
+
+*.key *.pem secrets.h config_local.h
+EOF
